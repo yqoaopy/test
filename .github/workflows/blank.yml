@@ -32,6 +32,7 @@ jobs:
 
  ### Uncomment below configuration to enable automatic fix pull request creation if vulnerabilities are reported
           blackducksca_fixpr_enabled: true
+          blackducksca_fixpr_filter_severities: MEDIUM
           github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when blackducksca_fixpr_enabled is set to 'true'
   
           
