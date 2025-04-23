@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
   security-events: write  # ⬅️ 關鍵：必須給這個權限才能上傳 SARIF
-    
+  pull-requests: write  
 jobs:
   build:
     runs-on: self-hosted
