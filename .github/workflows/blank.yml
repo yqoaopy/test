@@ -35,7 +35,6 @@ jobs:
           # blackducksca_reports_sarif_file_path: '/Users/tmp/report.sarif.json' # File path including file name where SARIF report should be created(need to include file name as well)
           # blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
           # blackducksca_reports_sarif_groupSCAIssues: true # By default true
-          # 個人帳號無法啟用Advanced Security 功能（包括 Code Scanning) 故無法上傳
           blackducksca_upload_sarif_report: true  # Upload Black Duck SCA SARIF report in GitHub Advanced Security tab
           github_token: ${{ secrets.GITHUB_TOKEN }} # Required when blackducksca_upload_sarif_report is set as true
 
