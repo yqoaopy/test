@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ main, master, develop, stage, release ]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  security-events: write  # ⬅️ 關鍵：必須給這個權限才能上傳 SARIF
     
 jobs:
   build:
