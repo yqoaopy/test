@@ -26,6 +26,8 @@ jobs:
           ### SCANNING: Required fields
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
-         
+          
+          ### SARIF report generation and upload to GitHub Adavanced Security: Uncomment below to enable
+          blackducksca_reports_sarif_create: true # Create Black Duck SCA SARIF report and upload it as artifact
 
           
