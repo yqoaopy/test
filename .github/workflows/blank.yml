@@ -19,7 +19,8 @@ jobs:
         ### Configure DETECT environment variables
         env:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
-          BLACKDUCK_TRUST_CERT: true
+          BLACKDUCK_TRUST_CERT: true       
+          DETECT_ACCURACY_REQUIRED: NONE
           
         with:
           ### SCANNING: Required fields
