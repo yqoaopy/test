@@ -29,6 +29,14 @@ jobs:
           ### SCANNING: Required fields
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
+
+ ### Uncomment below configuration to enable automatic fix pull request creation if vulnerabilities are reported
+          blackducksca_fixpr_enabled: true
+          blackducksca_fixpr_maxCount: 5
+          blackducksca_fixpr_filter_severities: 'CRITICAL,HIGH,MEDIUM'
+          blackducksca_fixpr_useUpgradeGuidance: 'SHORT_TERM,LONG_TERM'
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when blackducksca_fixpr_enabled is set to 'true'
+  
           
  ### SARIF report generation and upload to GitHub Adavanced Security: Uncomment below to enable
           blackducksca_reports_sarif_create: true # Create Black Duck SCA SARIF report and upload it as artifact
@@ -36,7 +44,6 @@ jobs:
           # blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
           # blackducksca_reports_sarif_groupSCAIssues: true # By default true
           blackducksca_upload_sarif_report: true  # Upload Black Duck SCA SARIF report in GitHub Advanced Security tab
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Required when blackducksca_upload_sarif_report is set as true
 
 
           ### Below configuration is used to enable automatic pull request comment based on Black Duck SCA scan result
