@@ -21,7 +21,6 @@ jobs:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           BLACKDUCK_TRUST_CERT: true
           DETECT_ACCURACY_REQUIRED: NONE
-          DETECT_TRUST_CERT: true
           
         with:
           ### SCANNING: Required fields
