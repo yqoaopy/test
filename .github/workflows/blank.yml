@@ -39,4 +39,8 @@ jobs:
           blackducksca_upload_sarif_report: true  # Upload Black Duck SCA SARIF report in GitHub Advanced Security tab
           github_token: ${{ secrets.GITHUB_TOKEN }} # Required when blackducksca_upload_sarif_report is set as true
 
+
+          ### Below configuration is used to enable automatic pull request comment based on Black Duck SCA scan result
+          blackducksca_prComment_enabled: true
+          # Mandatory when blackducksca_automation_prcomment is set to 'true'
           
