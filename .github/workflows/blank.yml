@@ -26,8 +26,7 @@ jobs:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           BLACKDUCK_TRUST_CERT: true
           DETECT_ACCURACY_REQUIRED: NONE        
-          DETECT_PIP_REQUIREMENTS_PATH: requirements.txt
-          DETECT_PYTHON_PYTHON3: true
+          DETECT_BLACKDUCK_SIGNATURE_SCANNER_SNIPPET_MATCHING: SNIPPET_MATCHING
         with:
           ### SCANNING: Required fields
           # blackducksca_scan_full: true
