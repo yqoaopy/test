@@ -27,6 +27,7 @@ jobs:
           DETECT_ACCURACY_REQUIRED: NONE
         with:
           ### SCANNING: Required fields
+          blackducksca_scan_full: true
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
 
@@ -47,4 +48,5 @@ jobs:
           ### Below configuration is used to enable automatic pull request comment based on Black Duck SCA scan result
           blackducksca_prComment_enabled: true
           # Mandatory when blackducksca_automation_prcomment is set to 'true'
-          
+
+          blackducksca_fixpr_enabled: true
