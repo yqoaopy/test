@@ -26,7 +26,7 @@ jobs:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           BLACKDUCK_TRUST_CERT: true
           DETECT_ACCURACY_REQUIRED: NONE
-          DETECT_PYTHON_PATH: /usr/bin/python3
+          # DETECT_PYTHON_PATH: /usr/bin/python3
         with:
           ### SCANNING: Required fields
           # blackducksca_scan_full: true
