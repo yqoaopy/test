@@ -25,7 +25,8 @@ jobs:
         env:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
           BLACKDUCK_TRUST_CERT: true
-          DETECT_ACCURACY_REQUIRED: NONE
+          DETECT_ACCURACY_REQUIRED: NONE        
+          DETECT_PIP_REQUIREMENTS: requirements.txt
         with:
           ### SCANNING: Required fields
           # blackducksca_scan_full: true
