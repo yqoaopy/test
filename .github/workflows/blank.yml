@@ -43,4 +43,5 @@ jobs:
           ### Below configuration is used to enable automatic pull request comment based on Black Duck SCA scan result
           blackducksca_prComment_enabled: true
           # Mandatory when blackducksca_automation_prcomment is set to 'true'
-          
+
+          blackducksca_fixpr_enabled: true
