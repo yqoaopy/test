@@ -59,6 +59,8 @@ jobs:
         ### Use below configuration to set specific detect environment variables
         env:
           DETECT_PROJECT_NAME: ${{ github.event.repository.name }}
+          BLACKDUCK_TRUST_CERT: true
+          DETECT_ACCURACY_REQUIRED: NONE
         with:
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
@@ -68,3 +70,4 @@ jobs:
           blackducksca_prComment_enabled: true
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           # Mandatory when blackducksca_automation_prcomment is set to 'true'
+          blackducksca_fixpr_enabled: true
