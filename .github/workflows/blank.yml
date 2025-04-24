@@ -27,6 +27,7 @@ jobs:
           DETECT_ACCURACY_REQUIRED: NONE
         with:
           ### SCANNING: Required fields
+          blackducksca_scan_full: true
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
           
