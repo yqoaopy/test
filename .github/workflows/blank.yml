@@ -70,3 +70,8 @@ jobs:
           blackducksca_prComment_enabled: true
           github_token: ${{ secrets.GITHUB_TOKEN }} 
           # Mandatory when blackducksca_automation_prcomment is set to 'true'
+          ### Configuration to enable automatic creation of Fix Pull Requests
+          detect_arguments: |
+            --blackduck.sca.fixpr.enabled=true
+            # Optional: Configure the maximum number of Fix PRs to create (0 for unlimited)
+            # --blackduck.sca.fixpr.maxCount=5          
