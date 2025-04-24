@@ -9,7 +9,7 @@ on:
 permissions:
   contents: read
   security-events: write  # ⬅️ 關鍵：必須給這個權限才能上傳 SARIF
-    
+  pull-requests: write  
 jobs:
   build:
     runs-on: self-hosted
@@ -30,6 +30,12 @@ jobs:
           blackducksca_scan_full: true
           blackducksca_url: ${{ vars.BLACKDUCK_URL }}
           blackducksca_token: ${{ secrets.BLACKDUCK_TOKEN }}
+
+ ### Uncomment below configuration to enable automatic fix pull request creation if vulnerabilities are reported
+          blackducksca_fixpr_enabled: true
+          blackducksca_fixpr_filter_severities: MEDIUM
+          github_token: ${{ secrets.GITHUB_TOKEN }} # Mandatory when blackducksca_fixpr_enabled is set to 'true'
+  
           
  ### SARIF report generation and upload to GitHub Adavanced Security: Uncomment below to enable
           blackducksca_reports_sarif_create: true # Create Black Duck SCA SARIF report and upload it as artifact
@@ -37,7 +43,6 @@ jobs:
           # blackducksca_reports_sarif_severities: 'CRITICAL,HIGH'
           # blackducksca_reports_sarif_groupSCAIssues: true # By default true
           blackducksca_upload_sarif_report: true  # Upload Black Duck SCA SARIF report in GitHub Advanced Security tab
-          github_token: ${{ secrets.GITHUB_TOKEN }} # Required when blackducksca_upload_sarif_report is set as true
 
 
           ### Below configuration is used to enable automatic pull request comment based on Black Duck SCA scan result
